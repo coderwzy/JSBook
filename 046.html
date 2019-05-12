@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>包装对象</title>
+</head>
+<body>
+    <script>
+        var s = "test";
+        s.len = 4;  // 临时对象
+        var t = s.len;  // 临时对象被销毁
+        document.write(t);  // 输出：undefined
+
+        var str = "test";  //值
+        var num = 10;  // 值
+        var bool = true;  // 值
+        var S = new String(str);  // 对象
+        var N = new Number(num);  // 对象
+        var B = new Boolean(bool);  // 对象
+        document.write(typeof str);  // 输出：string
+        document.write(typeof num);  // 输出：number
+        document.write(typeof S);  // 输出：object
+        document.write(typeof N);  // 输出：object
+    </script>
+    <script>
+        var arr1 = [1, 2];
+        var arr2 = [1, 2];
+        alert(arr1 == arr2 || arr1 === arr2);  // 显示false
+    </script>
+</body>
+</html>

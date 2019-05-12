@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数字时钟</title>
+    <script>
+        // 定义一个函数用于显示当前时间
+        function displayTime() {
+            var element = document.getElementById("clock")
+            var now = new Date();
+            element.innerText = now.toLocaleTimeString();  // 设置元素的内容
+            setTimeout(displayTime, 1000);  // 每秒执行一次
+        }
+        window.onload = displayTime;
+    </script>
+    <style>
+        #clock {
+            color: green;
+            font: bold 24px sans;
+            background-color: #ddf;
+            padding: 10px;
+            border: solid black 2px;
+            border-radius: 10px;  /* 圆角效果，如果浏览器支持的话 */
+        }
+    </style>
+</head>
+<body>
+<h1>数字时钟</h1>
+<span id="clock"></span>
+</body>
+</html>

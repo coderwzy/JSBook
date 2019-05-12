@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS书签</title>
+</head>
+<body>
+<a href='javascript:
+    var e = "", r = "";
+    do {
+        e = prompt("Expression: " + e +"\n" + r + "\n", e);
+        try{
+            r = "Result: " + eval(e);
+        } catch (ex) { r = ex }
+     } while (e);
+     void 0;
+'>JavaScript计算器</a>
+</body>
+</html>

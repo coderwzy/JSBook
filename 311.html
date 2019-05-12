@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>例13-1</title>
+    <style>
+        /* class="reveal"的元素的子元素都不显示 */
+        .reveal * {
+            display: none;
+        }
+
+        /* 除了class="handle"的元素 */
+        .reveal *.handle {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="reveal">
+    <h1 class="handle">点击这里显示隐藏内容</h1>
+    <p>这段内容被隐藏了，一定条件下会出现。</p>
+</div>
+<script>
+    window.onload = function () {
+        // 找到所有class="reveal"的容器元素
+        var elements = document.getElementsByClassName("reveal");  // 返回数组
+        // 对每一个元素进行遍历
+        for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            // 找到elementd对象中的"handle"元素
+            var h1handle = element.getElementsByClassName("handle")[0];
+            // 给这个元素绑定事件处理程序
+            addRevealHandler(h1handle, element);
+            function addRevealHandler(h1handle, element) {
+                h1handle.onmouseover = function () {
+                    if (element.className == "reveal") {
+                        element.className ="revealed";
+                    }
+                    else if (element.className =="revealed") {
+                        element.className = "reveal";
+                    }
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
